@@ -1,0 +1,120 @@
+/* LoginComponent.css */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #121212; /* Dark background */
+}
+
+.login-form {
+    background-color: #1e1e1e; /* Darker background for form */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff; /* White text */
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.8rem; /* Larger font size */
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 15px; /* Space between label and input */
+    color: #ffffff; /* White label */
+    font-size: 1rem; /* Larger font size */
+    width: 100%; /* Full width */
+    text-align: left; /* Align text to the left */
+    font-family: 'Kanit', sans-serif;
+}
+
+.login-form input {
+    width: 100%; /* Full width input fields */
+    padding: 12px;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Space above input */
+    border: 1px solid #444444;
+    border-radius: 4px;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.login-form input::placeholder {
+    color: #bbbbbb; /* Placeholder color */
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: 'Kanit', sans-serif;
+}
+
+.login-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.login-message {
+    margin-top: 10px;
+    color: red;
+    text-align: center;
+}
+
+/* Media query for small devices (tablets, phones) */
+@media (max-width: 768px) {
+    .login-form {
+        padding: 20px;
+        max-width: 300px; /* Reduce form size */
+    }
+    
+    .login-form h2 {
+        font-size: 1.5rem; /* Reduce heading font size */
+    }
+    
+    .login-form label {
+        font-size: 0.9rem; /* Reduce label font size */
+    }
+
+    .login-form button {
+        font-size: 14px; /* Reduce button font size */
+    }
+}
+
+/* Media query for very small devices (small phones) */
+@media (max-width: 480px) {
+    .login-form {
+        padding: 15px;
+        max-width: 250px; /* Reduce form size for very small screens */
+    }
+
+    .login-form h2 {
+        font-size: 1.2rem; /* Further reduce heading font size */
+    }
+
+    .login-form label {
+        font-size: 0.8rem; /* Further reduce label font size */
+    }
+
+    .login-form button {
+        font-size: 12px; /* Further reduce button font size */
+    }
+}

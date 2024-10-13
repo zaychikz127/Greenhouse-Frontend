@@ -1,0 +1,174 @@
+/* กำหนด html และ body ให้มีความสูงเต็มที่ และตั้งค่าพื้นฐาน */
+html, body {
+    height: 100%; 
+    margin: 0;
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+    scroll-behavior: smooth; /* ทำให้การเลื่อนหน้านุ่มนวล */
+}
+
+/* Adjust index-container padding to avoid overlap with the sticky bar */
+.index-container {
+    padding-top: 110px; /* เพิ่ม padding-top ให้เพียงพอสำหรับความสูงใหม่ของ sticky bar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+/* หัวข้อ */
+.index-container h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* รายการสินค้า */
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px; /* เพิ่มมาร์จินด้านล่างเพื่อเพิ่มช่องว่าง */
+}
+
+/* Container ของแต่ละไอเทม */
+.item-container {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มเอฟเฟกต์การเคลื่อนไหว */
+}
+
+.item-container:hover {
+    transform: translateY(-5px); /* เพิ่มเอฟเฟกต์เมื่อ hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* รูปภาพของไอเทม */
+.item-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px; /* เพิ่มช่องว่างด้านล่าง */
+}
+
+/* ปุ่มเข้าสู่ระบบ */
+.login-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Kanit', sans-serif;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* เพิ่มเอฟเฟกต์ขยายเมื่อ hover */
+}
+
+/* Container สำหรับกราฟ */
+.chart-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    height: 500px;
+}
+
+/* Media query สำหรับหน้าจอขนาดกลาง */
+@media (max-width: 1024px) {
+    .item-container {
+        width: 90%;
+    }
+}
+
+/* Media query สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+    .login-button {
+        padding: 8px 16px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .index-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .item-container {
+        width: 90%;
+    }
+}
+
+/* Media query สำหรับหน้าจอขนาดเล็กมาก */
+@media (max-width: 576px) {
+    .login-button {
+        padding: 6px 12px;
+    }
+
+    .item-container {
+        padding: 15px;
+    }
+
+    .index-container h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Sticky Bar */
+.sticky-bar {
+    position: sticky;
+    top: 0;
+    background-color: #1e1e1e;
+    z-index: 1000;
+    padding: 30px 20px; /* ปรับ padding เพิ่มความสูง */
+    width: 100%;
+    height: 80px; /* เพิ่มความสูงเป็น 80px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sticky-bar h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.8rem; /* ปรับขนาด font ของหัวข้อใน sticky bar */
+}
+
+.sticky-bar .login-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 24px; /* เพิ่มขนาดของปุ่ม */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sticky-bar .login-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* ปรับตำแหน่งการแสดงค่า LDR */
+.ldr-display {
+    margin-left: 20px; /* เพิ่มพื้นที่ว่างด้านซ้ายของ LDR */
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+}
+
+
