@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LoginComponent.css'; // Import CSS
-
+import './LoginComponent.css';
 function LoginComponent() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -12,8 +11,7 @@ function LoginComponent() {
         e.preventDefault();
     
         try {
-            //const response = await fetch(`http://localhost:4500/login`, {
-            const response = await fetch(`https://dev-got.planriean.com/login`, {
+            const response = await fetch(`https://got-api-fnlp.plutopon.site/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -24,9 +22,7 @@ function LoginComponent() {
             const data = await response.json();
             if (response.ok && data.message === 'Login successful') {
                 setMessage('Login successful');
-                // บันทึก username ใน Local Storage
                 localStorage.setItem('username', username);
-                // นำผู้ใช้ไปหน้า /admin
                 navigate('/admin');
             } else {
                 setMessage(data.message || 'Invalid username or password');
@@ -34,6 +30,10 @@ function LoginComponent() {
         } catch (error) {
             setMessage('Error connecting to the server. Please try again later.');
         }
+    };
+
+    const handleForgotPassword = () => {
+        navigate('/forgot-password');
     };
 
     return (
@@ -60,6 +60,9 @@ function LoginComponent() {
                 </label>
                 <button type="submit">เข้าสู่ระบบ</button>
                 <p className="login-message">{message}</p>
+                <button type="button" onClick={handleForgotPassword}>
+                    ลืมรหัสผ่าน?
+                </button> {/* ลิงก์ไปหน้าลืมรหัสผ่าน */}
             </form>
         </div>
     );

@@ -20,8 +20,7 @@ function ChangePasswordComponent() {
         }
 
         try {
-            //const response = await fetch('http://localhost:4500/change-password', {
-            const response = await fetch('https://dev-got.planriean.com/change-password', {
+            const response = await fetch('https://got-api-fnlp.plutopon.site/change-password', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ const PlantChart = ({ filteredPlantData, selectedMonth, selectedYear }) => {
         labels: uniqueDates,
         datasets: [
             {
-                label: 'Leaf Length (Tower 1)',
+                label: 'ความยาวของใบพืช (แท่นปลูกที่ 1 แบบหมุน)',
                 data: uniqueDates.map(day => {
                     const entry = filteredPlantData.find(e => new Date(e.date).getDate() === day && e.tower_id === 1);
                     return entry ? entry.leaf_length : null;
@@ -24,7 +24,7 @@ const PlantChart = ({ filteredPlantData, selectedMonth, selectedYear }) => {
                 tension: 0.1,
             },
             {
-                label: 'Leaf Length (Tower 2)',
+                label: 'ความยาวของใบพืช (แท่นปลูกที่ 2 แบบปกติ)',
                 data: uniqueDates.map(day => {
                     const entry = filteredPlantData.find(e => new Date(e.date).getDate() === day && e.tower_id === 2);
                     return entry ? entry.leaf_length : null;
@@ -42,7 +42,7 @@ const PlantChart = ({ filteredPlantData, selectedMonth, selectedYear }) => {
         labels: uniqueDates,
         datasets: [
             {
-                label: 'Leaf Width (Tower 1)',
+                label: 'ความกว้างของใบพืช (แท่นปลูกที่ 1 แบบหมุน)',
                 data: uniqueDates.map(day => {
                     const entry = filteredPlantData.find(e => new Date(e.date).getDate() === day && e.tower_id === 1);
                     return entry ? entry.leaf_width : null;
@@ -53,7 +53,7 @@ const PlantChart = ({ filteredPlantData, selectedMonth, selectedYear }) => {
                 tension: 0.1,
             },
             {
-                label: 'Leaf Width (Tower 2)',
+                label: 'ความกว้างของใบพืช (แท่นปลูกที่ 2 แบบปกติ)',
                 data: uniqueDates.map(day => {
                     const entry = filteredPlantData.find(e => new Date(e.date).getDate() === day && e.tower_id === 2);
                     return entry ? entry.leaf_width : null;
@@ -70,20 +70,20 @@ const PlantChart = ({ filteredPlantData, selectedMonth, selectedYear }) => {
         plugins: {
             title: {
                 display: true,
-                text: `Plant Growth Data - ${selectedMonth} ${selectedYear}`, // Display selected month and year in chart title
+                text: `กราฟการเจริญเติบโตของพืช - เดือน ${selectedMonth} ปี ${selectedYear}`, // Display selected month and year in chart title
             },
         },
         scales: {
             x: {
                 title: {
                     display: true,
-                    text: 'Day',
+                    text: 'วันที่',
                 },
             },
             y: {
                 title: {
                     display: true,
-                    text: 'Measurement (cm)',
+                    text: 'หน่วยการวัด เซนติเมตร (cm)',
                 },
                 ticks: {
                     precision: 2,
